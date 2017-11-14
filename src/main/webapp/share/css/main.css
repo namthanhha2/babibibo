@@ -9,7 +9,8 @@ and open the template in the editor.
 */
 body {
     margin: 0px;
-    font-family: sans-serif;
+    font-family: arial,sans-serif;
+    font-size: 13px;
 }
 
 #headerPart {
@@ -45,4 +46,28 @@ body {
 .iconInTitle {
     color:white;
     margin: 20px;
+}
+
+.box {
+    width: 400px;
+    height: 150px;
+    border:1px solid gray;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    margin: auto;
+    padding: 10px;
+}
+
+.box input {
+    width: 100%;
+    margin-bottom: 10px;
+    height: 30px;
+    color:black;
+}
+
+.box div {
+    color:#4285f4;
+}
+
+.button {
+    border:1px solid;
 }
