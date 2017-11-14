@@ -1,0 +1,48 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 21, 2017, 12:05:05 AM
+    Author     : Vu Manh Ha
+*/
+body {
+    margin: 0px;
+    font-family: sans-serif;
+}
+
+#headerPart {
+    padding: 10px;
+    height: 20px;
+    background-color: #8599ce;
+}
+
+#bodyPart {
+    padding: 10px;
+}
+
+#footerPart {
+    padding: 10px;
+    height: 20px;
+    background-color: #8599ce;
+}
+
+.title {
+    width: 200px;
+    height: 150px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    display: inline-block;
+    margin: 10px;
+    cursor: hand;
+}
+
+.title div {
+    color:white;
+    font-size: 15px;
+}
+
+.iconInTitle {
+    color:white;
+    margin: 20px;
+}

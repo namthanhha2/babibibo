@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="page.definition" template="/WEB-INF/page/layout/fullPage.jsp">
+    </definition>
+    <definition name="blankPage.definition" template="/WEB-INF/page/layout/blankPage.jsp">
+    </definition>
+    <definition name="frontend.page" extends="page.definition">
+        <put-attribute name="header" value="/WEB-INF/page/frontend/header.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/page/frontend/footer.jsp"/>
+    </definition>
+    <definition name="home.page" extends="frontend.page">
+        <put-attribute name="body" value="/WEB-INF/page/frontend/home.jsp"/>
+    </definition>
+    <definition name="login.page" extends="blankPage.definition">
+        <put-attribute name="body" value="/WEB-INF/page/frontend/login.jsp"/>
+    </definition>
+</tiles-definitions>

@@ -1,0 +1,24 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.multipart.parser" value="pell"></constant> 
+    <constant name="struts.devMode" value="false"></constant> 
+    <package name="frontEnd" extends="struts-default">
+        <result-types>
+            <result-type class="org.apache.struts2.views.tiles.TilesResult" default="false" name="tiles"/>
+            <result-type class="org.apache.struts2.json.JSONResult" default="false" name="json"/>
+        </result-types>
+        <action name="homeAction" class="com.havm.babibibo.frontend.controller.HomeCtrl"  method="toPage" >
+            <result name="page" type="tiles">home.page</result>
+        </action>
+        <action name="loginAction" class="com.havm.babibibo.frontend.controller.LoginCtrl"  method="toPage" >
+            <result name="page" type="tiles">login.page</result>
+            <result name="jsonReturn" type="json">
+                <param name="root">json</param>
+            </result>
+            <allowed-methods>loginFB</allowed-methods>
+        </action>
+    </package>
+</struts>
