@@ -5,6 +5,6 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<div>
-    
-</div>
+    <div style="font-weight:bold">Copyright © 2017 Vũ Mạnh Hà</div>
+
+    <div>Địa chỉ: P101-CT1 Chung cư Hyundai Hillstate, Hà Đông, Hà Nội, Việt Nam</div>

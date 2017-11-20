@@ -5,16 +5,22 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<script type="text/javascript">
-    //document.body.style.backgroundColor = "#AABBCC";
 
-</script>
-<div ng-app="loginApp" ng-controller="loginCtrl" style="margin: auto;" class="box">
-    <div>Tài khoản</div>
+<div ng-app="" ng-controller="loginCtrl" style="margin-left: auto;margin-top: 50px" class="box">
+    <div style="text-align: center;margin-top: 20px;">
+    <label style="font-size: 14px;font-weight: bold; color:#112233">ĐĂNG NHẬP</label>
+    </div>
+    <br>
+    <label>Tài khoản</label>
     <div><input type="text" ng-model="userName"/></div>
-    <div>Mật khẩu</div>
+    <label>Mật khẩu</label>
     <div><input type="password" ng-model="password"/></div>
+    <label>Email</label>
+    <div><input type="email" ng-model="email"/></div>
+    <button id="" class="default">Đăng nhập</button>
+    <button id="" class="negative">Quên mật khẩu</button>
 </div>
 
-<script>
+<script type="text/javascript">
+    document.getElementById("bodyPart").style.backgroundColor = "rgb(64,175,218)";
 </script>
