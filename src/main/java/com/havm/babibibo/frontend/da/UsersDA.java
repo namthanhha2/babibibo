@@ -6,6 +6,7 @@
 package com.havm.babibibo.frontend.da;
 
 import com.havm.babibibo.frontend.BO.Users;
+import org.hibernate.Query;
 
 /**
  *
@@ -20,6 +21,19 @@ public class UsersDA extends BaseDA {
             session.getTransaction().commit();
             return true;
         } catch (Exception en) {
+            return false;
+        }
+    }
+    
+    public boolean checkUser(String userName, String password){
+        String hql = "select count(*) from Users u where lower(u.userName) = ? and password = ?";
+        Query query = session.createQuery(hql);
+        query.setParameter(0, userName.toLowerCase());
+        query.setParameter(1, password);
+        Long count = (Long)query.uniqueResult();
+        if(count >0l){
+            return true;
+        } else {
             return false;
         }
     }

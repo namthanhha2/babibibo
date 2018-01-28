@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-  <session-factory>
-    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/babibibo</property>
-    <property name="hibernate.connection.username">babibibo</property>
-    <property name="hibernate.connection.password">123456a@</property>
-    <!--mapping class="com.havm.babibibo.frontend.BO.Users"/-->
-  </session-factory>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/babibibo</property>
+        <property name="hibernate.connection.username">babibibo</property>
+        <property name="hibernate.connection.password">123456a@</property>
+        <property name="current_session_context_class">thread</property>
+        <mapping class="com.havm.babibibo.frontend.BO.Users"/>
+        <mapping class="com.havm.babibibo.frontend.BO.Roles"/>
+        <mapping class="com.havm.babibibo.frontend.BO.Modules"/>
+        <mapping class="com.havm.babibibo.frontend.BO.UserRole"/>
+        <mapping class="com.havm.babibibo.frontend.BO.RoleModule"/>
+    </session-factory>
 </hibernate-configuration>

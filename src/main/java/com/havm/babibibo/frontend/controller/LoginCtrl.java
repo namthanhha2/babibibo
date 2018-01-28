@@ -6,6 +6,8 @@
 package com.havm.babibibo.frontend.controller;
 
 import com.havm.babibibo.common.BaseCtrl;
+import com.havm.babibibo.common.Constants;
+import com.havm.babibibo.frontend.da.UsersDA;
 import facebook4j.Account;
 import facebook4j.Album;
 import facebook4j.Facebook;
@@ -23,6 +25,9 @@ import java.util.ResourceBundle;
  * @author Vu Manh Ha
  */
 public class LoginCtrl extends BaseCtrl {
+    String userName;
+    String password;
+    String email;
 
     public String toPage() {
         return PAGE;
@@ -54,5 +59,39 @@ public class LoginCtrl extends BaseCtrl {
             json.setMessage(url);
         }
         return JSON;
+    }
+    
+    public String login(){
+        UsersDA da = new UsersDA();
+        if(da.checkUser(userName, password)){
+            json.setResultCode(Constants.RESULT_CODE.SUCCESS);
+        } else {
+            json.setResultCode(Constants.RESULT_CODE.ERROR);
+        }
+        return JSON;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

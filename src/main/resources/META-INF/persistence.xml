@@ -3,6 +3,10 @@
   <persistence-unit name="com.havm_babibibo_war_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>com.havm.babibibo.frontend.BO.Users</class>
+    <class>com.havm.babibibo.frontend.BO.Roles</class>
+    <class>com.havm.babibibo.frontend.BO.Modules</class>
+    <class>com.havm.babibibo.frontend.BO.RoleModule</class>
+    <class>com.havm.babibibo.frontend.BO.UserRole</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/babibibo"/>

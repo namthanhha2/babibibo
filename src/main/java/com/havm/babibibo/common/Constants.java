@@ -3,18 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.havm.babibibo.frontend.da;
-
-import com.havm.util.HibernateUtil;
-import org.hibernate.Session;
+package com.havm.babibibo.common;
 
 /**
  *
  * @author Vu Manh Ha
  */
-public class BaseDA {
-    Session session;
-    public BaseDA(){
-        session = HibernateUtil.openSession();
+public class Constants {
+    public interface RESULT_CODE {
+        public static Long SUCCESS = 1l;
+        public static Long ERROR = 2l;
     }
 }

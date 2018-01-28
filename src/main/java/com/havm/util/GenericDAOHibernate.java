@@ -167,11 +167,6 @@ public class GenericDAOHibernate<T, ID extends Serializable> extends GenericHibe
         return returnOb;
     }
 
-    @Override
-    public T findById(ID id, boolean lock) {
-        return super.findById(id, false);
-    }
-
     public T findById(ID id) {
         return (T) getSession().get(getPersistentClass(), id);
     }
@@ -185,7 +180,7 @@ public class GenericDAOHibernate<T, ID extends Serializable> extends GenericHibe
         return (List<T>) crit.list();
     }
 
-    public String UpcaseFirst(String str) {
+    public static String UpcaseFirst(String str) {
         String first = str.substring(0, 1);
         String concat = str.substring(1);
         return first.toUpperCase() + concat;

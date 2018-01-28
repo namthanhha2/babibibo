@@ -18,7 +18,7 @@
             <result name="jsonReturn" type="json">
                 <param name="root">json</param>
             </result>
-            <allowed-methods>loginFB</allowed-methods>
+            <allowed-methods>loginFB,login</allowed-methods>
         </action>
     </package>
 </struts>

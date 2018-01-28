@@ -24,18 +24,6 @@
      return this.persistentClass;
    }
  
-   public T findById(String sessionName, ID id, boolean lock)
-   {
-     T entity;
-     if (lock)
-       entity = getSession().load(getPersistentClass(), id, LockMode.UPGRADE);
-     else {
-       entity = getSession().load(getPersistentClass(), id);
-     }
- 
-     return entity;
-   }
- 
    public List<T> findAll(String sessionName)
    {
      return findByCriteria(sessionName, new Criterion[0]);
@@ -90,11 +78,6 @@
    protected List<T> findByCriteria(Criterion[] criterion)
    {
      return findByCriteria("default session", criterion);
-   }
- 
-   public T findById(ID id, boolean lock)
-   {
-     return findById("default session", id, lock);
    }
  
    public T makePersistent(T entity)

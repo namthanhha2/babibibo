@@ -17,6 +17,7 @@ body {
     padding: 10px;
     height: 40px;
     text-align: center;
+    background: linear-gradient(to right, rgba(255,0,0,0.5), rgba(0,255,0,0.5), rgba(0,0,255,0.5));
 }
 
 #bodyPart {
@@ -61,7 +62,7 @@ body {
 .box {
     width: 300px;
     border:1px solid gray;
-    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
     background-color: rgba(236,247,251,0.5);
     border-radius: 5px;
     margin: auto;
@@ -70,7 +71,8 @@ body {
 
 .box input {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    margin-top: 10px;
     height: 30px;
     color:black;
 }
@@ -81,6 +83,7 @@ body {
 
 .box label {
     color:#092D4C;
+    font-weight: bold;
 }
 
 button {
@@ -188,4 +191,39 @@ button img {
     color: #fff;
     background-color: #c9302c;
     border-color: #761c19;
+}
+
+.errorMessage {
+    color:red !important;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.function {
+    width: 150px;
+    height: 80px;
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+    margin: 5px;
+    padding: 10px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    border-radius: 5px;
+    color: #eee;
+}
+
+.brown {
+    background-color: brown;
+}
+
+.violet {
+    background-color: blueviolet;
+}
+
+.crimson {
+    background-color: crimson;
+}
+
+.dimgray {
+    background-color: dimgray;
 }

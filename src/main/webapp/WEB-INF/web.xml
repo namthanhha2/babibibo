@@ -25,6 +25,6 @@
         </cookie-config>
     </session-config>
     <welcome-file-list>
-        <welcome-file>homeAction.do</welcome-file>
+        <welcome-file>/WEB-INF/page/frontend/index.jsp</welcome-file>
     </welcome-file-list>
 </web-app>
