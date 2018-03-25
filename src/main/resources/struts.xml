@@ -20,5 +20,12 @@
             </result>
             <allowed-methods>loginFB,login</allowed-methods>
         </action>
+        <action name="modulesAction" class="com.havm.babibibo.backend.controller.ModulesCtrl"  method="toPage" >
+            <result name="page" type="tiles">module.page</result>
+            <result name="jsonReturn" type="json">
+                <param name="root">json</param>
+            </result>
+            <allowed-methods>loginFB,login</allowed-methods>
+        </action>
     </package>
 </struts>

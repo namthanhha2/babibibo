@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.havm.babibibo.frontend.BO;
+package com.havm.babibibo.backend.BO;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -49,9 +49,6 @@ public class Users implements Serializable {
     private String phone;
     @Column(name = "status")
     private Integer status;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "users")
-    private Collection<UserRole> userRoleCollection;
-
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -175,15 +172,5 @@ public class Users implements Serializable {
 
     public void setStatus(Integer status) {
         this.status = status;
-    }
-
-    @XmlTransient
-    public Collection<UserRole> getUserRoleCollection() {
-        return userRoleCollection;
-    }
-
-    public void setUserRoleCollection(Collection<UserRole> userRoleCollection) {
-        this.userRoleCollection = userRoleCollection;
-    }
-    
+    }    
 }

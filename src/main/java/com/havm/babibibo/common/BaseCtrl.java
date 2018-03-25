@@ -34,4 +34,8 @@ public class BaseCtrl extends ActionSupport {
     public void setJson(ReturnResult json) {
         this.json = json;
     }
+    
+    public String toPage(){
+        return PAGE;
+    }
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.havm.babibibo.frontend.BO;
+package com.havm.babibibo.backend.BO;
 
 import java.io.Serializable;
 import javax.persistence.Basic;

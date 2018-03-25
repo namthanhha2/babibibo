@@ -11,6 +11,7 @@ body {
     margin: 0px;
     font-family: arial,sans-serif;
     font-size: 13px;
+    background-image:url("../images/background.jpg");
 }
 
 #headerPart {
@@ -21,23 +22,19 @@ body {
 }
 
 #bodyPart {
-    padding: 10px;
-    background: -webkit-linear-gradient(left top, rgb(64,175,218) , rgb(170,222,243)); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(bottom right, rgb(64,175,218), rgb(170,222,243)); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(bottom right, rgb(64,175,218), rgb(170,222,243)); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(bottom right, rgb(64,175,218) , rgb(170,222,243)); /* Standard syntax */
 }
 
 #footerPart {
     padding: 10px;
     height: 30px;
-    background-color: white;
+    background-color: rgba(255,255,255,0.6);
     font-family: arial;
     font-size: 12px;
     text-align: center;
     position: fixed;
     bottom: 0;
     width: 100%;
+    display: none;
 }
 
 .title {
@@ -212,6 +209,10 @@ button img {
     color: #eee;
 }
 
+.function img {
+    width: 60px;
+}
+
 .brown {
     background-color: brown;
 }
@@ -221,9 +222,36 @@ button img {
 }
 
 .crimson {
-    background-color: crimson;
+    background-color: rgba(237, 20, 61, 0.5);
 }
 
 .dimgray {
     background-color: dimgray;
+}
+
+.taskbar {
+    height: 50px;
+    width: 100%;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    bottom: 0px;
+}
+
+.taskbar div {
+    height: 40px;
+    width: 50px;
+    border: 1px solid rgba(2,2,2,0.5);
+    text-align: center;
+    border-radius: 3px;
+    float: left;
+    overflow: hidden;
+    padding-top:3px;
+    margin:3px;
+    background-color: rgba(255,255,255,0.5);
+}
+
+.taskbar img {
+    width: 35px;
 }

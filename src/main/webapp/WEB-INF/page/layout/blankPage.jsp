@@ -19,6 +19,7 @@
             <link href="share/css/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
             <script src="share/js/angular.min.js" type="text/javascript"></script>
             <script src="share/js/connector.js" type="text/javascript"></script>
+            <script src="share/js/app.js" type="text/javascript"></script>
         </head>
         <body>
             <div id="token">

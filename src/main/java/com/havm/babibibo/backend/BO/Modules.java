@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.havm.babibibo.frontend.BO;
+package com.havm.babibibo.backend.BO;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -36,10 +36,6 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Modules.findByImgPath", query = "SELECT m FROM Modules m WHERE m.imgPath = :imgPath"),
     @NamedQuery(name = "Modules.findByStatus", query = "SELECT m FROM Modules m WHERE m.status = :status")})
 public class Modules implements Serializable {
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "modules")
-    private Collection<RoleModule> roleModuleCollection;
-
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -139,14 +135,5 @@ public class Modules implements Serializable {
     public String toString() {
         return "com.havm.babibibo.frontend.BO.Modules[ moduleId=" + moduleId + " ]";
     }
-
-    @XmlTransient
-    public Collection<RoleModule> getRoleModuleCollection() {
-        return roleModuleCollection;
-    }
-
-    public void setRoleModuleCollection(Collection<RoleModule> roleModuleCollection) {
-        this.roleModuleCollection = roleModuleCollection;
-    }
-    
+   
 }

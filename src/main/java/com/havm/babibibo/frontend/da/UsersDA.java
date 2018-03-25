@@ -5,7 +5,7 @@
  */
 package com.havm.babibibo.frontend.da;
 
-import com.havm.babibibo.frontend.BO.Users;
+import com.havm.babibibo.backend.BO.Users;
 import org.hibernate.Query;
 
 /**

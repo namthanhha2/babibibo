@@ -8,10 +8,10 @@
         <property name="hibernate.connection.username">babibibo</property>
         <property name="hibernate.connection.password">123456a@</property>
         <property name="current_session_context_class">thread</property>
-        <mapping class="com.havm.babibibo.frontend.BO.Users"/>
-        <mapping class="com.havm.babibibo.frontend.BO.Roles"/>
-        <mapping class="com.havm.babibibo.frontend.BO.Modules"/>
-        <mapping class="com.havm.babibibo.frontend.BO.UserRole"/>
-        <mapping class="com.havm.babibibo.frontend.BO.RoleModule"/>
+        <mapping class="com.havm.babibibo.backend.BO.Users"/>
+        <mapping class="com.havm.babibibo.backend.BO.Roles"/>
+        <mapping class="com.havm.babibibo.backend.BO.Modules"/>
+        <mapping class="com.havm.babibibo.backend.BO.UserRole"/>
+        <mapping class="com.havm.babibibo.backend.BO.RoleModule"/>
     </session-factory>
 </hibernate-configuration>

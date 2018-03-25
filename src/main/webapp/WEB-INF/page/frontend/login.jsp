@@ -25,7 +25,7 @@
 
 <script type="text/javascript">
     document.getElementById("bodyPart").style.backgroundColor = "rgb(64,175,218)";
-    var loginApp = angular.module("loginApp", []);
+    var loginApp = angular.module('loginApp',['ngMaterial']);
     loginApp.controller('loginCtrl', function ($scope, $http) {
         $scope.title = "ĐĂNG NHẬP";
         $scope.submitLabel = "Đăng nhập";
@@ -45,7 +45,7 @@
             }).then(
                     function successCallback(response) {
                         // this callback will be called asynchronously
-                        // when the response is available
+                        // when the response is available                       
                         console.log(response);
                         if(response.data.resultCode == "2"){
                             $scope.errorMessage = "Mật khẩu hoặc password không chính xác";

@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
-    <definition name="page.definition" template="/WEB-INF/page/layout/fullPage.jsp">
+    <definition name="page.template" template="/WEB-INF/page/layout/fullPage.jsp">
     </definition>
-    <definition name="blankPage.definition" template="/WEB-INF/page/layout/blankPage.jsp">
+    <definition name="blankPage.template" template="/WEB-INF/page/layout/blankPage.jsp">
     </definition>
-    <definition name="frontend.page" extends="page.definition">
+    <definition name="content.template" template="/WEB-INF/page/layout/content.jsp">
+    </definition>
+    <definition name="frontend.page" extends="page.template">
         <put-attribute name="header" value="/WEB-INF/page/frontend/header.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/page/frontend/footer.jsp"/>
     </definition>
     <definition name="home.page" extends="frontend.page">
         <put-attribute name="body" value="/WEB-INF/page/frontend/home.jsp"/>
     </definition>
-    <definition name="login.page" extends="page.definition">
+    <definition name="login.page" extends="page.template">
         <put-attribute name="header" value="/WEB-INF/page/frontend/header.jsp"/>
         <put-attribute name="body" value="/WEB-INF/page/frontend/login.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/page/frontend/footer.jsp"/>
+    </definition>
+    <definition name="user.page" extends="content.template">
+        <put-attribute name="content" value="/WEB-INF/page/backend/admin/users.jsp"/>
+    </definition>
+    <definition name="module.page" extends="content.template">
+        <put-attribute name="content" value="/WEB-INF/page/backend/admin/modules.jsp"/>
     </definition>
 </tiles-definitions>

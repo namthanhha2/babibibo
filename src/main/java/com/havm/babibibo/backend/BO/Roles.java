@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.havm.babibibo.frontend.BO;
+package com.havm.babibibo.backend.BO;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -34,11 +34,6 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Roles.findByRoleName", query = "SELECT r FROM Roles r WHERE r.roleName = :roleName"),
     @NamedQuery(name = "Roles.findByStatus", query = "SELECT r FROM Roles r WHERE r.status = :status")})
 public class Roles implements Serializable {
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "roles")
-    private Collection<UserRole> userRoleCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "roles")
-    private Collection<RoleModule> roleModuleCollection;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -106,24 +101,5 @@ public class Roles implements Serializable {
     @Override
     public String toString() {
         return "com.havm.babibibo.frontend.BO.Roles[ roleId=" + roleId + " ]";
-    }
-
-    @XmlTransient
-    public Collection<UserRole> getUserRoleCollection() {
-        return userRoleCollection;
-    }
-
-    public void setUserRoleCollection(Collection<UserRole> userRoleCollection) {
-        this.userRoleCollection = userRoleCollection;
-    }
-
-    @XmlTransient
-    public Collection<RoleModule> getRoleModuleCollection() {
-        return roleModuleCollection;
-    }
-
-    public void setRoleModuleCollection(Collection<RoleModule> roleModuleCollection) {
-        this.roleModuleCollection = roleModuleCollection;
-    }
-    
+    }    
 }
