@@ -26,10 +26,12 @@
 
             <!-- Angular Material Library -->
             <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+            <script src="share/js/ui-grid.core.min.js"></script>
+            <script src="share/js/app.js" type="text/javascript"></script>
 
             <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+            <link rel="stylesheet" href="share/css/ui-grid.min.css">
             <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
-            <script src="share/js/app.js" type="text/javascript"></script>
         </head>
 
         <body>

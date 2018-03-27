@@ -2,8 +2,8 @@
 <%@taglib prefix="sx" tagdir="/WEB-INF/tags" %>
 <script type="text/javascript">
     console.log("here");
-    var moduleApp = angular.module("moduleApp",['ngMaterial', 'ngMessages']);
-    moduleApp.controller('moduleCtrl', function ($scope,$http) {
+    var moduleApp = angular.module("moduleApp", ['ngMaterial', 'ngMessages', 'ui.grid']);
+    moduleApp.controller('moduleCtrl', function ($scope, $http) {
         console.log("start");
         $scope.myDate = new Date();
         $scope.minDate = new Date(
@@ -22,25 +22,52 @@
             return day === 0 || day === 6;
         };
         console.log("end");
+
+        this.myData = [
+            {
+                firstName: "Cox",
+                lastName: "Carney",
+                company: "Enormo",
+                employed: true
+            },
+            {
+                firstName: "Lorraine",
+                lastName: "Wise",
+                company: "Comveyer",
+                employed: false
+            },
+            {
+                firstName: "Nancy",
+                lastName: "Waters",
+                company: "Fuelton",
+                employed: false
+            }
+        ];
     });
     console.log("end init");
     angular.bootstrap(document.getElementById("moduleId"), ['moduleApp']);
 
 </script>
-<div id="moduleId" ng-app="moduleApp" ng-controller="moduleCtrl">
+<div id="moduleId" ng-app="moduleApp" ng-controller="moduleCtrl as $ctrl">
     <md-toolbar class = "md-flex">
         <div class = "md-toolbar-tools">
-            <h2 class = "md-flex">Quản lý chức năng</h2>
+            <h3 class = "md-flex">Quản lý chức năng</h3>
         </div>
     </md-toolbar>
 
     <md-content flex layout="column" layout-wrap>
         <form name="objectSearchForm">
-            <sx:Input id="objectName" name="objectName" key="Tên chức năng" model="objectSearchForm.objectName"/>
-            <sx:Input id="objectCode" name="objectCode" key="Mã chức năng" model="objectSearchForm.objectCode" />
-            <md-datepicker 
-                ng-model = "myDate" 
-                md-placeholder = "Enter date"></md-datepicker>
+            <div layout="row">
+                <div flex="40">
+                    <sx:Input id="objectName" name="objectName" key="Tên chức năng" model="objectSearchForm.objectName"/>
+                </div>
+                <div flex="40">
+                    <sx:Input id="objectCode" name="objectCode" key="Mã chức năng" model="objectSearchForm.objectCode" />
+                </div>
+            </div>
+            <md-button class="md-primary md-raised" ng-click="onSearch()">Tìm kiếm</md-button>
         </form>
     </md-content>
+    <div id="grid1" ui-grid="{ data: $ctrl.myData }" class="grid"></div>
+
 </div>
