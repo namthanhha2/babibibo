@@ -1,18 +1,46 @@
-<md-toolbar class = "md-warn">
-    <div class = "md-toolbar-tools">
-        <h2 class = "md-flex">HTML 5</h2>
-    </div>
-</md-toolbar>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="sx" tagdir="/WEB-INF/tags" %>
+<script type="text/javascript">
+    console.log("here");
+    var moduleApp = angular.module("moduleApp",['ngMaterial', 'ngMessages']);
+    moduleApp.controller('moduleCtrl', function ($scope,$http) {
+        console.log("start");
+        $scope.myDate = new Date();
+        $scope.minDate = new Date(
+                $scope.myDate.getFullYear(),
+                $scope.myDate.getMonth() - 2,
+                $scope.myDate.getDate());
 
-<md-content flex layout-padding>
-    <p>HTML5 is the next major revision of the HTML standard superseding HTML
-        4.01, XHTML 1.0, and XHTML 1.1. HTML5 is a standard for structuring and
-        presenting content on the World Wide Web.</p>
+        $scope.maxDate = new Date(
+                $scope.myDate.getFullYear(),
+                $scope.myDate.getMonth() + 2,
+                $scope.myDate.getDate()
+                );
 
-    <p>HTML5 is a cooperation between the World Wide Web Consortium (W3C) and
-        the Web Hypertext Application Technology Working Group (WHATWG).</p>
+        $scope.onlyWeekendsPredicate = function (date) {
+            var day = date.getDay();
+            return day === 0 || day === 6;
+        };
+        console.log("end");
+    });
+    console.log("end init");
+    angular.bootstrap(document.getElementById("moduleId"), ['moduleApp']);
 
-    <p>The new standard incorporates features like video playback and drag-and-drop
-        that have been previously dependent on third-party browser plug-ins such as
-        Adobe Flash, Microsoft Silverlight, and Google Gears.</p>
-</md-content>
+</script>
+<div id="moduleId" ng-app="moduleApp" ng-controller="moduleCtrl">
+    <md-toolbar class = "md-flex">
+        <div class = "md-toolbar-tools">
+            <h2 class = "md-flex">Quản lý chức năng</h2>
+        </div>
+    </md-toolbar>
+
+    <md-content flex layout="column" layout-wrap>
+        <form name="objectSearchForm">
+            <sx:Input id="objectName" name="objectName" key="Tên chức năng" model="objectSearchForm.objectName"/>
+            <sx:Input id="objectCode" name="objectCode" key="Mã chức năng" model="objectSearchForm.objectCode" />
+            <md-datepicker 
+                ng-model = "myDate" 
+                md-placeholder = "Enter date"></md-datepicker>
+        </form>
+    </md-content>
+</div>

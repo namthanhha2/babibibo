@@ -5,27 +5,30 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<div ng-app="desktopApp" ng-controller="desktopCtrl" ng-cloak>
-    <div id="function0">
-        <div ng-repeat="item in lstFunctions">
-            <div class="function {{item.style}}" id="{{item.functionId}}" ng-click="toFunction(item)">
+<%@taglib prefix="sx" tagdir="/WEB-INF/tags" %>
+
+<div ng-app="desktopApp"  ng-cloak>
+    <div ng-controller="desktopCtrl">
+        <div id="function0">
+            <div ng-repeat="item in lstFunctions">
+                <div class="function {{item.style}}" id="{{item.functionId}}" ng-click="toFunction(item)">
+                    <img src="{{item.imgPath}}"/>
+                    <div>{{item.name}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="taskbar">
+            <div ng-repeat="item in lstRunningModules" class="runningModule" ng-click="selectModule(item.functionId)" title="{{item.name}}">
+
                 <img src="{{item.imgPath}}"/>
-                <div>{{item.name}}</div>
             </div>
         </div>
     </div>
-    <div id="moduleDetail">
-    </div>
-    <div class="taskbar">
-        <div ng-repeat="item in lstRunningModules" class="runningModule" ng-click="selectModule(item.functionId)" title="{{item.name}}">
-        
-            <img src="{{item.imgPath}}"/>
-        </div>
-    </div>
 </div>
-
+<div id="moduleDetail">
+</div>
 <script type="text/javascript">
-    var desktopApp = angular.module('desktopApp', ['ngMaterial']);
+    desktopApp = angular.module('desktopApp', ['ngMaterial', 'ngMessages']);
     //var desktopApp = angular.module("desktopApp", []);
     desktopApp.controller('desktopCtrl', function ($scope, $http) {
         $scope.lstFunctions = [
@@ -38,7 +41,7 @@
         $scope.lstRunningModules.push({
             functionId: 0,
             name: "Trang chủ",
-            imgPath:"share/images/home.png",
+            imgPath: "share/images/home.png",
             isActive: true
 
         });
@@ -55,14 +58,14 @@
                         function successCallback(response) {
                             //console.log(response);
                             var newEl = document.createElement("div");
-                            newEl.setAttribute("id","function"+item.functionId);
+                            newEl.setAttribute("id", "function" + item.functionId);
                             newEl.innerHTML = response.data;
                             document.getElementById("moduleDetail").appendChild(newEl);
                             app.parseAndExecScript(response.data);
                             var task = {
                                 functionId: item.functionId,
                                 name: item.name,
-                                imgPath:item.imgPath,
+                                imgPath: item.imgPath,
                                 isActive: true
                             };
                             $scope.lstRunningModules.push(task);
@@ -83,10 +86,10 @@
             var bReturn = false;
             for (var i = 0; i < $scope.lstRunningModules.length; i++) {
                 if ($scope.lstRunningModules[i].functionId === functionId) {
-                    document.getElementById("function"+functionId).style.display = "";
+                    document.getElementById("function" + functionId).style.display = "";
                     bReturn = true;
                 } else {
-                    document.getElementById("function"+$scope.lstRunningModules[i].functionId).style.display = "none";
+                    document.getElementById("function" + $scope.lstRunningModules[i].functionId).style.display = "none";
                 }
             }
             return bReturn;
