@@ -13,7 +13,7 @@ import org.hibernate.Session;
  * @author Vu Manh Ha
  */
 public class BaseDA {
-    Session session;
+    public Session session;
     public BaseDA(){
         session = HibernateUtil.openSession();
     }

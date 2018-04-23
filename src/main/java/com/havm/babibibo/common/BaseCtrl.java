@@ -6,7 +6,6 @@
 package com.havm.babibibo.common;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.Result;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts2.ServletActionContext;
@@ -19,6 +18,8 @@ public class BaseCtrl extends ActionSupport {
     public ReturnResult json = new ReturnResult();
     public static String JSON = "jsonReturn";
     public static String PAGE = "page";  
+    public Long start;
+    public Long take;
     
     public HttpServletRequest getRequest(){
         return ServletActionContext.getRequest();
@@ -37,5 +38,21 @@ public class BaseCtrl extends ActionSupport {
     
     public String toPage(){
         return PAGE;
+    }
+
+    public Long getStart() {
+        return start;
+    }
+
+    public void setStart(Long start) {
+        this.start = start;
+    }
+
+    public Long getTake() {
+        return take;
+    }
+
+    public void setTake(Long take) {
+        this.take = take;
     }
 }

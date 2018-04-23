@@ -8,7 +8,7 @@
 <%@taglib prefix="s" uri="/struts-tags"%>
 
 <s:i18n name="com/havm/babibibo/config/Language">
-    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" >
+    <!DOCTYPE HTML>
     <html>
         <head>
             <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -27,6 +27,7 @@
             <!-- Angular Material Library -->
             <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
             <script src="share/js/ui-grid.core.min.js"></script>
+            <script src="share/js/ui-grid.pagination.min.js"></script>
             <script src="share/js/app.js" type="text/javascript"></script>
 
             <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">

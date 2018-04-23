@@ -15,6 +15,7 @@ public class ReturnResult {
     Long resultCode;
     String message;
     String description;
+    Long totalItem;
     List lstItems;
 
     public Long getResultCode() {
@@ -47,5 +48,13 @@ public class ReturnResult {
 
     public void setLstItems(List lstItems) {
         this.lstItems = lstItems;
+    }
+
+    public Long getTotalItem() {
+        return totalItem;
+    }
+
+    public void setTotalItem(Long totalItem) {
+        this.totalItem = totalItem;
     }
 }
